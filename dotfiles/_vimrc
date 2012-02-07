@@ -31,12 +31,11 @@ if has('gui_macvim')
 		noremap GG ggVG
 		nnoremap gr gT
 		noremap FF :Explore<CR>
-		nmap <F11> yyp
-		map <silent> <F3> :call BufferList()<CR>
 		map <silent> <F2> :nohlsearch<CR>
-		map <silent> <F1> <CR>
 		nnoremap ,v :<C-u>tabnew ~/.vimrc<CR>
 		nnoremap <F5> :<C-u>source ~/.vimrc<CR>
+		noremap j gj
+		noremap k gk	
 		
 		"日付挿入
 		inoremap <Leader><Leader>date <C-R>=strftime('%Y/%m/%d (%a)')<CR>
@@ -66,13 +65,12 @@ if has('gui_macvim')
 		filetype off
 		set rtp+=~/.vim/vundle.git/
 		call vundle#rc()
-
+		source $VIMRUNTIME/macros/matchit.vim
 		Bundle 'snipMate'
+		Bundle 'surround.vim'
 		Bundle 'YankRing.vim'
 		Bundle 'Shougo/neocomplcache'
 		Bundle 'Align'
-		Bundle 'surround.vim'
-	"	Bundle 'unite.vim'
 
 		filetype plugin indent on
 
